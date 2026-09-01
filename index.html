@@ -6,7 +6,44 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Prince Kumar | Data Science Portfolio</title>
+    <!-- Google Search and website identity -->
+    <title>Prince Kumar | Data Science & AI Portfolio</title>
+    <meta name="description" content="Official portfolio of Prince Kumar, featuring Data Science, Machine Learning, Generative AI and Artificial Intelligence.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://princekuma78.in/">
+    <meta name="author" content="Prince Kumar">
+    <meta name="theme-color" content="#07111f">
+    <link rel="icon" type="image/jpeg" href="profile.jpg.jpeg">
+    <link rel="apple-touch-icon" href="profile.jpg.jpeg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Prince Kumar">
+    <meta property="og:title" content="Prince Kumar | Data Science & AI Portfolio">
+    <meta property="og:description" content="Official portfolio of Prince Kumar – Data Science, Machine Learning and AI.">
+    <meta property="og:url" content="https://princekuma78.in/">
+    <meta property="og:image" content="https://princekuma78.in/profile.jpg.jpeg">
+
+    <!-- Website name information for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Prince Kumar78",
+      "alternateName": "Prince Kumar",
+      "url": "https://princekuma78.in/"
+    }
+    </script>
+
+    <!-- Personal profile information -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Prince Kumar78",
+      "url": "https://princekuma78.in/",
+      "image": "https://princekuma78.in/profile.jpg.jpeg"
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -39,8 +76,11 @@
 
         <div class="nav-buttons">
 
-            <button id="themeToggle" class="theme-btn">
+            <button id="themeToggle" class="theme-btn" type="button"
+                aria-label="Switch between Light and Dark Mode"
+                title="Switch between Light and Dark Mode">
                 <i class="fa-solid fa-moon"></i>
+                <span class="theme-text">Dark Mode</span>
             </button>
 
             <a href="#contact" class="resume-btn">
@@ -796,146 +836,6 @@
 
     </section>
 
-
-    <!-- ================= STREAMLIT ================= -->
-
-    <section class="section streamlit-section">
-
-        <div class="section-title">
-
-            <span>PYTHON APPLICATION DEVELOPMENT</span>
-
-            <h2>Building Applications with Streamlit</h2>
-
-        </div>
-
-
-        <div class="streamlit-container">
-
-            <div class="streamlit-text">
-
-                <h2>
-
-                    <i class="fa-solid fa-window-maximize"></i>
-
-                    Interactive Data Science Applications
-
-                </h2>
-
-
-                <p>
-
-                    I use Streamlit to build interactive and
-                    user-friendly applications using Python.
-
-                </p>
-
-
-                <p>
-
-                    Streamlit helps transform Data Science and
-                    Machine Learning projects into interactive
-                    applications without requiring extensive
-                    knowledge of traditional web development.
-
-                </p>
-
-
-                <ul>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Interactive Data Dashboards
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        EDA Applications
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Machine Learning Applications
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Data Visualization Interfaces
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Python-Based Interactive Tools
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="streamlit-ui">
-
-                <div class="fake-dashboard">
-
-                    <div class="dashboard-header">
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                        Data Science Dashboard
-
-                    </div>
-
-
-                    <div class="dashboard-stats">
-
-                        <div>
-
-                            <h3>1,250</h3>
-
-                            <p>Data Records</p>
-
-                        </div>
-
-
-                        <div>
-
-                            <h3>85%</h3>
-
-                            <p>Model Accuracy</p>
-
-                        </div>
-
-
-                        <div>
-
-                            <h3>24</h3>
-
-                            <p>Insights</p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="chart-placeholder">
-
-                        <div class="bar bar1"></div>
-                        <div class="bar bar2"></div>
-                        <div class="bar bar3"></div>
-                        <div class="bar bar4"></div>
-                        <div class="bar bar5"></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
     <!-- ================= PROJECTS ================= -->
 
     <section class="section projects-section" id="projects">
@@ -1442,6 +1342,32 @@
 
     </button>
 
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+        const themeText = document.querySelector(".theme-text");
+        const themeIcon = themeToggle.querySelector("i");
+
+        if (localStorage.getItem("theme") === "light") {
+            document.body.classList.add("light-mode");
+            themeText.textContent = "Light Mode";
+            themeIcon.className = "fa-solid fa-sun";
+        }
+
+        themeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+                themeText.textContent = "Light Mode";
+                themeIcon.className = "fa-solid fa-sun";
+            } else {
+                localStorage.setItem("theme", "dark");
+                themeText.textContent = "Dark Mode";
+                themeIcon.className = "fa-solid fa-moon";
+            }
+        });
+    </script>
 
     <script src="script.js"></script>
 
